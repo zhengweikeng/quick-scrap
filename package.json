@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "background.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i ./style/global.css -o ./dist/global.css",
-    "watch": "tailwindcss -i ./style/global.css -o ./dist/global.css --watch"
+    "build:css": "tailwindcss -i ./style/global.css -o ./dist/global.css",
+    "watch:css": "tailwindcss -i ./style/global.css -o ./dist/global.css --watch",
+    "production:css": "tailwindcss -i ./style/global.css -o ./style/global.min.css --minify"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "tailwindcss": "^3.3.0"
+    "tailwindcss": "^3.4.17"
   }
 }
