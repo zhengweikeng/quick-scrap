@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "QuickScrap",
+    "version": "1.0",
+    "description": "一个简单的临时草稿保存工具",
+    "permissions": [
+        "storage",
+        "contextMenus",
+        "clipboardWrite"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    }
+}
