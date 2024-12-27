@@ -4,185 +4,121 @@
 <head>
     <meta charset="UTF-8">
     <title>QuickScrap 设置</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .section {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        h1 {
-            margin: 0 0 30px 0;
-            color: #333;
-        }
-
-        h2 {
-            color: #444;
-            margin: 0 0 20px 0;
-        }
-
-        .option-container {
-            margin-bottom: 20px;
-        }
-
-        select {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            min-width: 150px;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        .save-message {
-            color: #4CAF50;
-            margin-left: 10px;
-            display: none;
-        }
-
-        .draft-item {
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 15px;
-            background-color: #fff;
-        }
-
-        .draft-content {
-            margin-bottom: 15px;
-            font-size: 14px;
-            line-height: 1.5;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-
-        .draft-time {
-            color: #666;
-            font-size: 12px;
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid #eee;
-            padding-top: 10px;
-        }
-
-        .no-drafts {
-            text-align: center;
-            color: #666;
-            padding: 20px 0;
-        }
-
-        .expiry-warning {
-            color: #e74c3c;
-        }
-
-        .expiry-soon {
-            color: #f39c12;
-        }
-
-        .expiry-safe {
-            color: #27ae60;
-        }
-
-        .tab-container {
-            margin-bottom: 20px;
-        }
-
-        .tab-button {
-            background-color: #f8f8f8;
-            border: none;
-            padding: 10px 20px;
-            margin-right: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .tab-button.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="dist/global.css">
 </head>
 
-<body>
-    <div class="container">
-        <h1>QuickScrap</h1>
-
-        <div class="tab-container">
-            <button class="tab-button active" data-tab="settings">设置</button>
-            <button class="tab-button" data-tab="drafts">草稿箱</button>
-        </div>
-
-        <div id="settings" class="tab-content active">
-            <div class="section">
-                <h2>系统设置</h2>
-                <div class="option-container">
-                    <label>
-                        默认过期时间：
-                        <select id="defaultExpiryTime">
-                            <option value="5">5分钟</option>
-                            <option value="15">15分钟</option>
-                            <option value="30">30分钟</option>
-                            <option value="60">1小时</option>
-                            <option value="1440">24小时</option>
-                        </select>
-                    </label>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex min-h-[600px] my-8 rounded-lg overflow-hidden shadow-xl">
+            <!-- 左侧导航栏 -->
+            <div class="w-64 rounded-lg bg-white dark:bg-gray-800">
+                <div class="p-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-500" viewBox="0 0 24 24"
+                            fill="none">
+                            <path fill="currentColor"
+                                d="m14.975 11.125l-2.1-2.1l-5.15 5.15q-.15.15-.225.338t-.075.387v1.175q0 .2.15.35t.35.15H9.1q.2 0 .388-.075t.337-.225l5.15-5.15Zm.6-.6l.7-.7q.3-.3.3-.7t-.3-.7l-.7-.7q-.3-.3-.7-.3t-.7.3l-.7.7l2.1 2.1ZM12 22q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22Zm0-2q3.35 0 5.675-2.325T20 12q0-3.35-2.325-5.675T12 4Q8.65 4 6.325 6.325T4 12q0 3.35 2.325 5.675T12 20Zm0-8Z" />
+                        </svg>
+                        <h1 class="text-xl font-bold text-gray-800 dark:text-white">QuickScrap</h1>
+                    </div>
                 </div>
-                <button id="save">保存设置</button>
-                <span id="saveMessage" class="save-message">设置已保存！</span>
+                <!-- 导航菜单 -->
+                <nav class="mt-4 space-y-2 px-3">
+                    <button
+                        class="w-full px-4 py-3 text-left font-medium transition-colors duration-200 bg-green-500 text-white rounded-lg"
+                        data-tab="settings">
+                        <div class="flex items-center space-x-3 py-3 text-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>常规</span>
+                        </div>
+                    </button>
+                    <button
+                        class="w-full px-4 py-3 text-left font-medium transition-colors duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg"
+                        data-tab="drafts">
+                        <div class="flex items-center space-x-3 py-3 text-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
+                            </svg>
+                            <span>草稿箱</span>
+                        </div>
+                    </button>
+                </nav>
             </div>
-        </div>
 
-        <div id="drafts" class="tab-content">
-            <div class="section">
-                <h2>草稿列表</h2>
-                <div id="draftsList"></div>
+            <!-- 右侧内容区 -->
+            <div class="flex-1 rounded-lg bg-gray-50 dark:bg-gray-900 pl-8">
+                <div id="settings" class="block">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">常规设置</h2>
+                        <div class="space-y-6">
+                            <label class="flex flex-col space-y-2">
+                                <span class="text-sm text-gray-700 dark:text-gray-300 font-medium">默认过期时间</span>
+                                <select id="defaultExpiryTime" class="block w-full max-w-xs px-3 py-2 text-base text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 bg-clip-padding border border-gray-300 dark:border-gray-600 rounded-md shadow-sm 
+                                    focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500
+                                    hover:border-gray-400 dark:hover:border-gray-500 transition-colors duration-200
+                                    appearance-none bg-no-repeat bg-[right_0.5rem_center]">
+                                    <option value="5">5分钟</option>
+                                    <option value="15">15分钟</option>
+                                    <option value="30">30分钟</option>
+                                    <option value="60">1小时</option>
+                                    <option value="1440">24小时</option>
+                                </select>
+                            </label>
+
+                            <label class="flex items-center justify-between cursor-pointer">
+                                <span class="text-sm text-gray-700 dark:text-gray-300 font-medium">自动复制到贴板</span>
+                                <input type="checkbox" id="autoClipboard" checked class="sr-only peer">
+                                <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-500 
+                                    dark:peer-focus:ring-green-500 rounded-full peer dark:bg-gray-700 
+                                    peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] 
+                                    after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 
+                                    after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 
+                                    peer-checked:bg-green-500"></div>
+                            </label>
+
+                            <label class="flex items-center justify-between cursor-pointer">
+                                <span class="text-sm text-gray-700 dark:text-gray-300 font-medium">深色模式切换</span>
+                                <input type="checkbox" id="darkMode" class="sr-only peer">
+                                <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-500 
+                                    dark:peer-focus:ring-green-500 rounded-full peer dark:bg-gray-700 
+                                    peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] 
+                                    after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 
+                                    after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 
+                                    peer-checked:bg-green-500"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="drafts" class="hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">草稿列表</h2>
+                        <div id="draftsList" class="divide-y divide-gray-200 dark:divide-gray-700 -my-3">
+                            <!-- 草稿列表内容将由 JS 动态插入 -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script src="options.js"></script>
+    <div id="toast"
+        class="fixed top-4 left-1/2 -translate-x-1/2 transform transition-all duration-300 -translate-y-full opacity-0">
+        <div class="bg-gray-900 dark:bg-gray-700 text-white px-4 py-2 rounded-lg shadow-lg flex items-center space-x-2">
+            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-sm">已复制到剪贴板</span>
+        </div>
+    </div>
 </body>
 
 </html>

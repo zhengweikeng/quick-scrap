@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    // 检查深色模式设置
+    chrome.storage.local.get(['darkMode'], function (result) {
+        // 如果有保存的设置，使用保存的设置
+        if (result.darkMode !== undefined) {
+            if (result.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        // 如果没有保存的设置，检查系统偏好
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    });
+
     const latestDraft = await getLatestDraft();
     const saveButton = document.getElementById('saveButton');
     const newButton = document.getElementById('newButton');
@@ -15,10 +31,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!content.trim()) return;
 
         try {
-            const result = await chrome.storage.local.get(['drafts', 'defaultExpiryTime']);
+            const result = await chrome.storage.local.get(['drafts', 'defaultExpiryTime', 'autoClipboard']);
             const drafts = result.drafts || [];
             const expiryMinutes = result.defaultExpiryTime || '30';
             const expiryTime = Date.now() + (expiryMinutes * 60 * 1000);
+            const autoClipboard = result.autoClipboard || false;
 
             // 创建新草稿
             const newDraft = {
@@ -29,7 +46,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             drafts.unshift(newDraft);
             await chrome.storage.local.set({ drafts });
-            await navigator.clipboard.writeText(content);
+
+            if (autoClipboard) {
+                await navigator.clipboard.writeText(content);
+            }
 
             window.close();
         } catch (error) {
@@ -43,10 +63,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!content.trim() || !latestDraft) return;
 
         try {
-            const result = await chrome.storage.local.get(['drafts', 'defaultExpiryTime']);
+            const result = await chrome.storage.local.get(['drafts', 'defaultExpiryTime', 'autoClipboard']);
             const drafts = result.drafts || [];
             const expiryMinutes = result.defaultExpiryTime || '30';
             const expiryTime = Date.now() + (expiryMinutes * 60 * 1000);
+            const autoClipboard = result.autoClipboard || false;
 
             // 更新现有草稿
             latestDraft.content = content;
@@ -54,7 +75,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             drafts[0] = latestDraft;
 
             await chrome.storage.local.set({ drafts });
-            await navigator.clipboard.writeText(content);
+
+            if (autoClipboard) {
+                await navigator.clipboard.writeText(content);
+            }
 
             window.close();
         } catch (error) {
@@ -73,7 +97,7 @@ async function getLatestDraft() {
         const now = Date.now();
         const validDrafts = [];
 
-        // 遍历草稿列表，直到找到第一个过期的草稿
+        // 遍历草稿列表，直���找到第一个过期的草稿
         for (let i = 0; i < result.drafts.length; i++) {
             const draft = result.drafts[i];
             if (draft.expiryTime > now) {
