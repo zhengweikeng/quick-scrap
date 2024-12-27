@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 标签页切换逻辑
     const tabButtons = document.querySelectorAll('[data-tab]');
-    const tabContents = document.querySelectorAll('#settings, #drafts');
+    const tabContents = document.querySelectorAll('#settings, #drafts, #about');
 
     // 切换标签的函数
     function switchTab(tabId) {

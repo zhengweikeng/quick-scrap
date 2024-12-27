@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <!-- 导航菜单 -->
-                <nav class="mt-4 space-y-2 px-3">
+                <nav class="mt-1 space-y-2 px-3">
                     <button
                         class="w-full px-4 py-3 text-left font-medium transition-colors duration-200 bg-green-500 text-white rounded-lg"
                         data-tab="settings">
@@ -50,6 +50,17 @@
                             <span>草稿箱</span>
                         </div>
                     </button>
+                    <button
+                        class="w-full px-4 py-3 text-left font-medium transition-colors duration-200 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-lg"
+                        data-tab="about">
+                        <div class="flex items-center space-x-3 py-3 text-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>关于</span>
+                        </div>
+                    </button>
                 </nav>
             </div>
 
@@ -57,7 +68,7 @@
             <div class="flex-1 rounded-lg bg-gray-50 dark:bg-gray-900 pl-8">
                 <div id="settings" class="block">
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
-                        <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">常规设置</h2>
+                        <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">常规��置</h2>
                         <div class="space-y-6">
                             <label class="flex flex-col space-y-2">
                                 <span class="text-sm text-gray-700 dark:text-gray-300 font-medium">默认过期时间</span>
@@ -103,6 +114,49 @@
                         <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">草稿列表</h2>
                         <div id="draftsList" class="divide-y divide-gray-200 dark:divide-gray-700 -my-3">
                             <!-- 草稿列表内容将由 JS 动态插入 -->
+                        </div>
+                    </div>
+                </div>
+
+                <div id="about" class="hidden">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+                        <div class="space-y-6 text-gray-600 dark:text-gray-300">
+                            <div class="prose dark:prose-invert max-w-none">
+                                <p class="text-base leading-relaxed">
+                                    QuickScrap 是一个简单而实用的浏览器扩展，专门用于快速保存临时文本内容。项目采用 MIT 许可开源，使用完全免费。
+                                </p>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-2 mb-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                                        stroke="currentColor" viewBox="0 0 2048 2048">
+                                        <path fill="currentColor"
+                                            d="M256 0h1536v2048H256V0zm1408 1920V128H384v1792h1280zM1024 512v128H512V512h512zm0 512v128H512v-128h512zm0 512v128H512v-128h512zm493-1107l-237 237l-173-173l90-90l83 83l147-147l90 90zm0 512l-237 237l-173-173l90-90l83 83l147-147l90 90zm0 512l-237 237l-173-173l90-90l83 83l147-147l90 90z" />
+                                    </svg>
+                                    <span class="text-base">问题反馈：<a
+                                            href="https://github.com/zhengweikeng/quick-scrap/issues"
+                                            class="text-base text-green-500 hover:text-green-600 transition-colors duration-200"
+                                            target="_blank">https://github.com/zhengweikeng/quick-scrap/issues</a></span>
+                                </div>
+
+                                <div class="flex items-center space-x-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                                    </svg>
+                                    <span class="text-base">GitHub：<a href="https://github.com/zhengweikeng/quick-scrap"
+                                            class="text-base text-green-500 hover:text-green-600 transition-colors duration-200"
+                                            target="_blank">https://github.com/zhengweikeng/quick-scrap</a></span>
+                                </div>
+                            </div>
+
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+                                Made with ❤️ by <a href="https://github.com/zhengweikeng"
+                                    class="text-green-500 hover:text-green-600 transition-colors duration-200"
+                                    target="_blank">zhengweikeng</a>
+                            </div>
                         </div>
                     </div>
                 </div>
